@@ -3,6 +3,6 @@
 const userController = require('../Users/useController');
 
 module.exports = function(app){
-    app.route('/about')
+    app.route('/Login')
         .get(userController.about);
 }
