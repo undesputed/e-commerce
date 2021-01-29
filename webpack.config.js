@@ -18,6 +18,7 @@ module.exports = {
         historyApiFallback: true,
    },
    module: {
+      strictExportPresence: true,
       rules: [
          {
             test: /\.(ts|tsx)$/,
@@ -33,11 +34,22 @@ module.exports = {
          },
          {
             test: /\.(png|j?g|svg|gif)?$/,
-            use: 'file-loader'
+            use: 'url-loader'
          },
          {
             test:/\.(scss|sass)$/i,
             use: ["style-loader", "css-loader", "sass-loader"]
+         },
+         {
+            test: /\.(png|jpg|gif)$/i,
+            use:[
+               {
+                  loader: 'url-loader',
+                  options: {
+                     limit: 10000,
+                  },
+               }
+            ],
          },
       ],
    },

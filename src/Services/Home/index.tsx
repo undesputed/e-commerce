@@ -12,7 +12,7 @@ class Home extends Component {
         return(
             <div>
                 <Banner/>
-                <Header/>
+                {/* <Header/> */}
             </div>
         )
     }
